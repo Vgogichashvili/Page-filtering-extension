@@ -1,0 +1,36 @@
+#cardsList {
+    display: block;
+    width: 1271px;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100%;
+    margin-bottom: 5%;
+    align-items: center;
+}
+
+.cards td{
+    font-size:large;
+    font-family: "poppins";
+
+}
+
+#table-Body img {
+    width: 206px;
+    height: 118.94px;
+    margin-top: 10px;
+    object-fit: cover;
+}
+
+tbody tr:last-child  {
+   background-color: rgb(243, 34, 34);
+}
+
+#searchBar {
+    background-image: url('/images/search\ icon\ -01.svg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-left: 15px;
+    margin-left:1px;
+    margin-top: 1%;
+}
+
