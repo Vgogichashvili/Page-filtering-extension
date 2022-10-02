@@ -51,8 +51,7 @@ const displaycards = (cards) => {
 loadcards();
 
 
-// const table = document.querySelector("#table-Body");
-// const lastRow = table.rows[ table.rows.length - 1 ];
+
 
 
 

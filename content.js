@@ -1,5 +1,4 @@
 const table = document.querySelector("#table-Body");
-const lastRow = table.rows[ table.rows.length - 1 ];
 const input = document.querySelector("#searchBar");
 
 
@@ -11,34 +10,28 @@ chrome.runtime.onMessage.addListener((request) => {
          
     }
     else if(request = "stop"){
-        lastRow.style.background = "#FFF";
         location.reload(); 
 
         
 }})
 
-// document.addEventListener("DOMContentLoaded",autoRefresh);
-
-function autoRefresh(){
-    console.log(localStorage.getItem("popupInpValue"))
-    if(localStorage.getItem("popupInpValue") || localStorage.getItem("popupInpValue")=== "" ){
-        let interval =
-        setInterval(() => {
-       if(lastRow){
-        lastRow.style.background = "red";
-         input.value = localStorage.getItem("popupInpValue")
-        console.log(input)
-        input.dispatchEvent(new KeyboardEvent('keyup', { 'key': 'a' }));
-        localStorage.removeItem("popupInpValue");
-        clearInterval(interval)
-    }
-        }, 500);
-    }
-
-
+function onLoad() {
+    const interval = setInterval(() => {
+        let lastRow = table.rows[table.rows.length - 1];
+        if (lastRow) {
+            if (localStorage.getItem("popupInpValue") || localStorage.getItem("popupInpValue") === "") {
+                input.value = localStorage.getItem("popupInpValue");
+                input.dispatchEvent(new KeyboardEvent('keyup', { 'key': 'a' }));
+                localStorage.removeItem("popupInpValue");
+               lastRow = table.rows[table.rows.length - 1];
+                lastRow.style.backgroundColor = 'red';
+}
+            clearInterval(interval);
+}
+    }, 500);
 }
 
-
+onLoad();
 
 
 
