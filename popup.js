@@ -6,19 +6,23 @@
 
 // autoRefresh()
 
-// const btnStart = document.getElementById("click-start");
-// const btnStop = document.getElementById("click-stop");
+const btnStart = document.getElementById("click-start");
+const btnStop = document.getElementById("click-stop");
+const input = document.querySelector("#searchBar")
 
 
 
 
-// document.addEventListener("DOMContentLoaded",function(){
-//     btnStart.addEventListener("click",function(){
-//         var body = document.getElementsByTagName("body")[0].style.backgroundColor = "red"
 
-//     })
-//      btnStop.addEventListener("click",function(){
-//         var body = document.getElementsByTagName("body")[0].style.backgroundColor = ""
+    btnStart.addEventListener("click",function(){
+    chrome.tabs.query({ currentWindow: true, active: true },function(tabs){
+        chrome.tabs.sendMessage(tabs[0].id,{command:"start",value:input.value});
 
-//     })
-// })
+    })
+
+    })
+     btnStop.addEventListener("click",function(){
+       chrome.tabs.query({ currentWindow: true, active: true },function(tabs){
+        chrome.tabs.sendMessage(tabs[0].id,'stop')
+       });
+    })

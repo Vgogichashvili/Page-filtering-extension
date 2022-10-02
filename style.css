@@ -21,9 +21,9 @@
     object-fit: cover;
 }
 
-tbody tr:last-child  {
+/* tbody tr:last-child  {
    background-color: rgb(243, 34, 34);
-}
+} */
 
 #searchBar {
     background-image: url('/images/search\ icon\ -01.svg');

@@ -1,10 +1,10 @@
-function autoRefresh() {
-    if (location.href.indexOf('refreshed') == -1) {
-        location.href = location.href + '?refreshed';
-    }
-}
+// function autoRefresh() {
+//     if (location.href.indexOf('refreshed') == -1) {
+//         location.href = location.href + '?refreshed';
+//     }
+// }
 
-autoRefresh()
+// autoRefresh()
 
 const cardsList = document.getElementById('table-Body');
 const searchBar = document.getElementById('searchBar');
@@ -51,8 +51,8 @@ const displaycards = (cards) => {
 loadcards();
 
 
-const table = document.querySelector("#table-Body");
-const lastRow = table.rows[ table.rows.length - 1 ];
+// const table = document.querySelector("#table-Body");
+// const lastRow = table.rows[ table.rows.length - 1 ];
 
 
 
